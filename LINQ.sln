@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ_Exercises", "LINQ_Exercises.csproj", "{7779D3AF-FB41-BDEF-0F08-EFD3793BC043}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ.Exercise", "LINQ.Exercise\LINQ_Exercises.csproj", "{7779D3AF-FB41-BDEF-0F08-EFD3793BC043}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ_Exercise_Test", "..\LINQ.Test\LINQ_Exercise_Test\LINQ_Exercise_Test.csproj", "{2DE47752-FE1C-4CFE-8591-07C1BE86EF67}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ.Test", "LINQ.Test\LINQ_Exercise_Test.csproj", "{2DE47752-FE1C-4CFE-8591-07C1BE86EF67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
