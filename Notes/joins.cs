@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LINQ.MockData;
 
-namespace LINQ
+namespace LINQ_Exercises.Notes
 {
     public class Joins   // Join, GroupJoin, and SelectMany.
     {
@@ -167,7 +167,7 @@ namespace LINQ
                 .SelectMany(address => address.s.DefaultIfEmpty(),
                 (ad, st) => new
                 {
-                    City = ad.a.City,
+                    ad.a.City,
                     StudentName = st == null ? "NULL" : st.FirstName + ' ' + st.LastName
                 });
             foreach (var student in query)

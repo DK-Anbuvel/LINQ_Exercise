@@ -1,4 +1,4 @@
-﻿using LINQ;
+﻿using LINQ_Exercises.Notes;
 
 namespace LINQ
 {

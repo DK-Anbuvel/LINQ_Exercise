@@ -18,10 +18,10 @@ namespace LINQ.Exercises
           You have a list of employees, each with a Name, Department, and Salary. Write a LINQ query to 
          find the employees in the "Engineering" department who have a salary greater than ₹50,000.
          */
-         List<Employee> Emp = new List<Employee>();
+        public List<Employee> Emp = new List<Employee>();
         public  ArrayData obj = new ArrayData();
          
-        public void Emp_Salary_Filtering()
+        public List<Employee> Emp_Salary_Filtering()
         {
             var res = Emp.Where(s => s.Department == "Engineering" && s.Salary > 50000).ToList();
 
@@ -29,6 +29,7 @@ namespace LINQ.Exercises
                       where emp.Department == "Engineering" && emp.Salary > 50000
                       select emp;
 
+            return res;
         }
 
         /* 2. Sales Report Aggregation
