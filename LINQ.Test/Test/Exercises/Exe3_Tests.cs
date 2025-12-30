@@ -65,5 +65,20 @@ namespace LINQ_Exercise_Test.Test.Exercises
             //Act
             var result = sut.DisplayCartesianProduct(characterList, numberList, color);
         }
+        [Fact]
+        public void DisplayInnerJoinedDataSetTest()
+        {
+            var result = sut.DisplayInnerJoinedDataSet();
+        }
+        [Fact]
+        public void DisplayRightJoinedDataSetTest()
+        {
+            var result = sut.DisplayRightJoinedDataSet();
+        }
+        [Fact]
+        public void DisplayLeftJoinedDataSetTest()
+        {
+            var result = sut.DisplayLeftJoinedDataSet();
+        }
     }
 }
