@@ -105,7 +105,8 @@ namespace LINQ_Exercises.Exercises
         {
             var result = from s in student
                          join d in department on s.DepartmentID equals d.ID into groupedData
-                         from c in groupedData.DefaultIfEmpty()
+                         from c in groupedData.DefaultIfEmpty() // this is the important line for left
+                         // join, it preserve all student(left) data if no matching department found, department value assign to null
                          select new
                          {
                              Name = $"{s.FirstName} {s.LastName}",
@@ -137,8 +138,9 @@ namespace LINQ_Exercises.Exercises
                          from c in groupedData.DefaultIfEmpty()
                          select new
                          {
+                             Name = c == null ? "NA" : $"{c.FirstName} {c.LastName}",
                              DepartmentName = d.Name,
-                             Name = c ==null?"NA": $"{c.FirstName} {c.LastName}",
+                            
                          };
 
             foreach (var std in result)
@@ -155,6 +157,55 @@ namespace LINQ_Exercises.Exercises
                 });
 
             return result;
+        }
+
+        /*28. Write a program in C# Sharp to display the list of items in the array according to
+         * the length of the string then by name in ascending order.
+         */
+        public dynamic DisplayBasedOnLength(string[] items)
+        {
+            var result = from s in items
+                         orderby s.Length ascending
+                         select s;
+
+            IEnumerable<string> cityOrder = items.OrderBy(str => str.Length) 
+                                           .ThenBy(str => str);
+
+            return result;
+        }
+        /*29. Write a program in C# Sharp to split a collection of strings into some groups.
+         */
+        public dynamic GroupTheString(string[] items)
+        {
+            var result = from i in Enumerable.Range(0, items.Length) // this generate sequence of integer 0 to item.length -1 (totalcount)
+                         group items[i] by i / 3;
+
+            var result1 = Enumerable.Range(0, items.Length).GroupBy(s => s / 3, i => items[i]);
+
+
+            foreach (var group in result)
+            {
+                Console.WriteLine($"Group {group.Key}: {string.Join(", ", group)}");
+            }
+            return result;
+        }
+
+        /*30. Write a program in C# Sharp to arrange the distinct elements in the list in ascending order.
+         */
+
+        public dynamic DistinctElementInAscending(string[] items)
+        {
+            var result = (from s in items
+                         select  s)
+                         .Distinct()
+                         .OrderBy(s =>s.Length)
+                         .ToList();
+
+            var result1 = items
+                   .Distinct()
+                   .OrderBy(s => s.Length)
+                   .ToList();
+            return result1;
         }
     }
 }

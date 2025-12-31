@@ -80,5 +80,20 @@ namespace LINQ_Exercise_Test.Test.Exercises
         {
             var result = sut.DisplayLeftJoinedDataSet();
         }
+        [Fact]
+        public void DisplayBasedOnLengthTest()
+        {
+            var result = sut.DisplayBasedOnLength(["green", "orange", "red"]);
+        }
+        [Fact]
+        public void GroupTheStringTest()
+        {
+            var result = sut.GroupTheString(["green","green","green","green", "orange", "red"]);
+        }
+        [Fact]
+        public void DistinctElementInAscendingTest()
+        {
+            var result = sut.DistinctElementInAscending(["green","green", "orange", "red"]);
+        }
     }
 }
